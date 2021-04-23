@@ -21,18 +21,38 @@ body {
     color: #141414
 }
 
+/* List Item */
 ul li {
     list-style: none;
 }
 
-i {
-    color: #bababa;;
+/* Text Bar */
+.text-bar {
+    outline: none;
+    height: 40px;
+    width: 100%;
+    padding-left: 10px;
+    border: 1px solid #e5e6e7;
+}
+
+.text-bar::placeholder {
+    font-weight: bold;
+    opacity: .3;
 }
 
 /* Avatars */
 .avatar img {
     width: 50px;
     border-radius: 50%;
+}
+
+/* Icons */
+i {
+    color: #bababa;
+}
+
+i:hover {
+    color: #777e82;
 }
 
 /* APP */
@@ -65,10 +85,6 @@ i {
 .app-header ul i {
     margin-right: 20px;
     font-size: 20px;
-}
-
-.app-header ul i:hover {
-    color: #777e82;
 }
 
 .info {
@@ -131,19 +147,6 @@ i {
     border-right: none;
 }
 
-.search input {
-    outline: none;
-    height: 40px;
-    width: 100%;
-    padding-left: 10px;
-    border: 1px solid #e5e6e7;
-}
-
-.search input::placeholder {
-    font-weight: bold;
-    color: #dfe0e0;
-}
-
 /* Contact List */
 .contact-list {
     flex-grow: 1;
@@ -190,7 +193,55 @@ i {
     background-size: cover;
 }
 
+/* Chat */
+.chat {
+    display: flex;
+    justify-content: space-between;
+}
+
+.message {
+    width: 300px;
+    padding: 0 15px;    
+}
+
+.received,
+.sent {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.sent {
+    background-color: #ddfabf;
+}
+
+.received {
+    position: relative;
+    top: 60px;
+    background-color: #ffffff;
+}
+
+.message .chat-text {
+    padding: 10px 0px 0px 10px;
+}
+
+.message p {
+    padding: 35px 5px 5px 0px;
+    font-size: 10px;
+    opacity: .3;
+}
+
+/* Footer */
 .content-footer {
-    padding: 30px;
+    display: flex;
+    padding: 10px;
     background: #f4f0ed;
 }
+
+.content-footer i{
+     font-size: 20px;
+     padding: 12px 10px;
+}
+
+
