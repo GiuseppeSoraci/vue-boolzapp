@@ -1,3 +1,4 @@
+/* GENERALS */
 * {
     margin: 0;
     padding: 0;
@@ -17,8 +18,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #141414
 }
 
+/* Avatars */
+.avatar img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+/* APP */
 .container {
     display: flex;
     width: 80%;
@@ -27,33 +36,57 @@ body {
     background: #fff;
 }
 
-.side {
-    flex-basis: 35%;
+/* HEADER */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: #ededed;
 }
 
-.side .side-header {
-    padding: 30px;
-    background: #ededed;
+.header-left,
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right ul li{
+    list-style: none;
+    display: inline-block;
+}
+
+.app-header ul i {
+    margin-right: 20px;
+    font-size: 20px;
+    color: #bababa;
+}
+
+.app-header ul i:hover {
+    color: #777e82;
+}
+
+.info {
+    margin-left: 10px;
+}
+
+.last-access {
+    color: #777e82;
+}
+
+
+/* SIDEBAR */
+.side {
+    flex-basis: 35%;
+    display: flex;
+    flex-direction: column;
     border-right: 1px solid #dbdbdb;
 }
 
+/* MAIN */
 .content {
     flex-basis: 65%;
     display: flex;
     flex-direction: column;
-}
-
-.content-header,
-.content-footer {
-    padding: 30px;
-}
-
-.content-header {
-    background: #ededed;
-}
-
-.content-footer {
-    background: #f4f0ed;
 }
 
 .content-main {
@@ -62,4 +95,9 @@ body {
     overflow-y: auto;
     background-image: url('../img/mine.jpg');
     background-size: cover;
+}
+
+.content-footer {
+    padding: 30px;
+    background: #f4f0ed;
 }
