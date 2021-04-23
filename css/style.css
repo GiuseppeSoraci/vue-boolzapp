@@ -6,6 +6,9 @@
 }
 
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: "Lato", Arial, Helvetica, sans-serif;
     height: 100vh;
     background-image: linear-gradient(
@@ -15,10 +18,15 @@ body {
         #dfe0d9 15%,
         #dfe0d9 100%
     );
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: #141414
+}
+
+ul li {
+    list-style: none;
+}
+
+i {
+    color: #bababa;;
 }
 
 /* Avatars */
@@ -51,14 +59,12 @@ body {
 }
 
 .header-right ul li{
-    list-style: none;
     display: inline-block;
 }
 
 .app-header ul i {
     margin-right: 20px;
     font-size: 20px;
-    color: #bababa;
 }
 
 .app-header ul i:hover {
@@ -73,20 +79,107 @@ body {
     color: #777e82;
 }
 
-
 /* SIDEBAR */
 .side {
-    flex-basis: 35%;
     display: flex;
     flex-direction: column;
+    flex-basis: 35%;
     border-right: 1px solid #dbdbdb;
+}
+
+/* Notification */
+.side .notifications {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #a2dffe;
+}
+
+.side .notifications i {
+    display: inline-block;
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+    line-height: 50px;
+    font-size: 20px;
+    border-radius: 50%;
+    background: #fff;
+    color: #a2dffe;
+}
+
+.text-notif a{
+    color: #688ea2;
+}
+
+/* Search */
+.search {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    background: #fbfbfb;
+}
+
+.search a {
+    display: inline-block;
+    text-align: center;
+    height: 40px;
+    width: 80px;
+    line-height: 40px;
+    background: #fff;
+    border: 1px solid #e5e6e7;
+    border-right: none;
+}
+
+.search input {
+    outline: none;
+    height: 40px;
+    width: 100%;
+    padding-left: 10px;
+    border: 1px solid #e5e6e7;
+}
+
+.search input::placeholder {
+    font-weight: bold;
+    color: #dfe0e0;
+}
+
+/* Contact List */
+.contact-list {
+    flex-grow: 1;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #f6f6f6;
+    transition: linear .2s;
+    cursor: pointer;
+}
+
+.contact-list li:last-child {
+    border-bottom: none;
+}
+
+.contact-list li .avatar {
+    margin-right: 20px;
+}
+
+.contact-list li .avatar img {
+    height: 60px;
+    width: 60px;
+}
+
+.contact-list li:hover {
+    background: rgba(186, 186, 186, .5);
 }
 
 /* MAIN */
 .content {
-    flex-basis: 65%;
     display: flex;
     flex-direction: column;
+    flex-basis: 65%;
 }
 
 .content-main {

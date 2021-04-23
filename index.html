@@ -46,7 +46,35 @@
             <!-- Side Main -->
             <section class="side-main">
 
-            </section>
+                <!-- Notifications -->
+                <div class="notifications">
+                    <i class="fas fa-bell-slash"></i>
+                    <div class="text-notif">
+                        <div>Ricevi notifiche di nuovi messaggi</div>
+                        <a href="#">Attiva notifiche desktop</a>
+                    </div>
+                </div>
+
+                <!-- Search -->
+                <div class="search">
+                    <a href="#"><i class="fas fa-search"></i></a>
+                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                </div>
+
+                <!-- Contact List -->
+                <div class="contact-list">
+                    <ul>
+                        <li v-for="contact in contacts">
+                            <div class="avatar">
+                                <img :src="'./img/avatar' + contact.avatar +'.jpg'" :alt="contact.name + 'Avatar'">
+                            </div>
+                            <div class="username">{{contact.name}}</div>
+                        </li>
+                    </ul>
+                </div>
+        </aside>
+
+        </section>
 
         </aside>
 
