@@ -185,49 +185,47 @@ i:hover {
     flex-basis: 65%;
 }
 
-.content-main {
+.main-content {
     flex-grow: 1;
-    padding: 20px;
     overflow-y: auto;
     background-image: url('../img/mine.jpg');
-    background-size: cover;
 }
 
 /* Chat */
-.chat {
+.chat-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    width: 85%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 50px 0;
 }
 
 .message {
-    width: 300px;
-    padding: 0 15px;    
-}
-
-.received,
-.sent {
-    display: flex;
-    justify-content: space-between;
-    height: 50px;
-    border-radius: 5px;
+    width: 45%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;   
 }
 
 .sent {
+    align-self: flex-end;
     background-color: #ddfabf;
 }
 
 .received {
-    position: relative;
-    top: 60px;
     background-color: #ffffff;
 }
 
 .message .chat-text {
-    padding: 10px 0px 0px 10px;
+    padding-bottom: 5px;
+    padding-left: 5px;
 }
 
-.message p {
-    padding: 35px 5px 5px 0px;
+.message .date {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5px;
     font-size: 10px;
     opacity: .3;
 }

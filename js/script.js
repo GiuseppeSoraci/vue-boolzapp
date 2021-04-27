@@ -1,6 +1,11 @@
 const app = new Vue({
     el: "#app",
     data: {
+        user: {
+            name: 'Giuseppe',
+            avatar: '_io',
+        },
+
         contacts: [
             {
                 name: 'Michele',
@@ -86,6 +91,13 @@ const app = new Vue({
                 ],
             },
         ],
+
+        activeContact: 0
     },
+    methods: {
+        setActiveContact(index) {
+            this.activeContact = index;
+        }
+    }
 
 });

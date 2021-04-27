@@ -30,10 +30,11 @@
             <header class="app-header">
                 <div class="header-left">
                     <div class="avatar">
-                        <img src="./img/avatar_6.jpg" alt="myavatar">
+                        <img :src="'./img/avatar' + user.avatar + '.jpg'" v-bind:alt="user.name">
                     </div>
-                    <div class="username">Nome Utente</div>
+                    <div class="username">{{user.name}}</div>
                 </div>
+
                 <div class="header-right">
                     <ul>
                         <li><a href="#"><i class="fas fa-circle-notch"></i></a></li>
@@ -64,7 +65,8 @@
                 <!-- Contact List -->
                 <div class="contact-list">
                     <ul>
-                        <li v-for="contact in contacts">
+                        <li v-for="(contact, index) in contacts" :class="{active: index == activeContact}"
+                            @click="setActiveContact(index)" v-show="contact.visible == true">
                             <div class="avatar">
                                 <img :src="'./img/avatar' + contact.avatar +'.jpg'" :alt="contact.name + 'Avatar'">
                             </div>
@@ -85,10 +87,11 @@
             <header class="app-header">
                 <div class="header-left">
                     <div class="avatar">
-                        <img src="./img/avatar_1.jpg" alt="michele-avatar">
+                        <img :src="'./img/avatar' + contacts[activeContact].avatar + '.jpg'"
+                            :alt="contacts[activeContact].name">
                     </div>
                     <div class="info">
-                        <div class="username">Michele</div>
+                        <div class="username">{{contacts[activeContact].name}}</div>
                         <div class="last-access">Ultimo accesso oggi alle 10.35</div>
                     </div>
                 </div>
@@ -102,21 +105,13 @@
             </header>
 
             <!-- Main -->
-            <section class="content-main">
+            <section class="main-content">
 
                 <!-- Chat -->
-                <div class="chat">
-                    <div class="message">
-                        <div class="received">
-                            <div class="chat-text">Messaggio ricevuto</div>
-                            <p>23/04/2021 15:50:00</p>
-                        </div>
-                    </div>
-                    <div class="message">
-                        <div class="sent">
-                            <div class="chat-text">Messaggio inviato</div>
-                            <p>23/04/2021 15:50:00</p>
-                        </div>
+                <div class="chat-container">
+                    <div v-for="message in contacts[activeContact].messages" :class="'message ' + message.status">
+                        <div class="chat-text">{{message.message}}</div>
+                        <p class="date">{{message.date}}</p>
                     </div>
             </section>
 
