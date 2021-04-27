@@ -49,7 +49,7 @@
             </header>
 
             <!-- Side Main -->
-            <section class="side-main">
+            <div class="side-main">
 
                 <!-- Notifications -->
                 <div class="notifications">
@@ -63,7 +63,8 @@
                 <!-- Search -->
                 <div class="search">
                     <a href="#"><i class="fas fa-search"></i></a>
-                    <input class="text-bar" type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input class="text-bar" type="text" placeholder="Cerca o inizia una nuova chat"
+                        v-model.trim="searchModel" @keyup="search">
                 </div>
 
                 <!-- Contact List -->
@@ -78,10 +79,7 @@
                         </li>
                     </ul>
                 </div>
-        </aside>
-
-        </section>
-
+            </div>
         </aside>
 
         <!-- MAIN CONTENT -->
@@ -109,7 +107,7 @@
             </header>
 
             <!-- Main -->
-            <section class="main-content">
+            <div class="main-content">
 
                 <!-- Chat -->
                 <div class="chat-container">
@@ -117,7 +115,8 @@
                         <div class="chat-text">{{message.message}}</div>
                         <p class="date">{{message.date}}</p>
                     </div>
-            </section>
+                </div>
+            </div>
 
             <!-- Footer -->
             <footer class="footer-content">
