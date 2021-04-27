@@ -231,13 +231,13 @@ i:hover {
 }
 
 /* Footer */
-.content-footer {
+.footer-content {
     display: flex;
     padding: 10px;
     background: #f4f0ed;
 }
 
-.content-footer i{
+.footer-content i{
      font-size: 20px;
      padding: 12px 10px;
 }

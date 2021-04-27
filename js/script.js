@@ -1,11 +1,14 @@
 const app = new Vue({
     el: "#app",
     data: {
+
+        // User
         user: {
             name: 'Giuseppe',
             avatar: '_io',
         },
 
+        // Contacts
         contacts: [
             {
                 name: 'Michele',
@@ -92,12 +95,38 @@ const app = new Vue({
             },
         ],
 
-        activeContact: 0
+        activeContact: 0,
+        newMessage: '',
     },
+
     methods: {
+
+        // Set Contact
         setActiveContact(index) {
             this.activeContact = index;
-        }
-    }
+        },
 
+        // Send Message
+        sendMessage() {
+            if (this.newMessage != '') {
+                this.contacts[this.activeContact].messages.push({
+                    message: this.newMessage,
+                    status: 'sent',
+                    date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                })
+
+                // reset 
+                this.newMessage = '';
+
+                // Automatic Response
+                setTimeout((sendMessage) => {
+                    this.contacts[this.activeContact].messages.push({
+                        message: 'ok',
+                        status: 'received',
+                        date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                    })
+                }, 1000);
+            }
+        },
+    }
 });

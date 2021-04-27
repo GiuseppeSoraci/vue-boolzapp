@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="./css/style.css">
     <!-- Vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <!-- Day JS -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js'
+        integrity='sha512-0fcCRl828lBlrSCa8QJY51mtNqTcHxabaXVLPgw/jPA5Nutujh6CbTdDgRzl9aSPYW/uuE7c4SffFUQFBAy6lg=='
+        crossorigin='anonymous'></script>
     <title>Boolzapp</title>
 </head>
 
@@ -116,9 +120,10 @@
             </section>
 
             <!-- Footer -->
-            <footer class="content-footer">
+            <footer class="footer-content">
                 <a href="#"><i><i class="far fa-smile"></i></i></a>
-                <input class="text-bar" type="text" placeholder="Scrivi un messaggio">
+                <input class="text-bar" type="text" placeholder="Scrivi un messaggio" @keyup.enter="sendMessage()"
+                    v-model.trim="newMessage">
                 <a href="#"><i><i class="fas fa-microphone"></i></i></a>
             </footer>
         </main>
